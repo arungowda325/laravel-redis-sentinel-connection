@@ -1,19 +1,19 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Connectors;
+namespace Wolverine\LaravelRedisSentinel\Connectors;
 
 use Illuminate\Support\Arr;
-use Monospice\LaravelRedisSentinel\Connections\PredisConnection;
+use Wolverine\LaravelRedisSentinel\Connections\PredisConnection;
 use Predis\Client;
 
 /**
  * Initializes Predis Client instances for Redis Sentinel connections
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     http://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     http://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class PredisConnector
 {

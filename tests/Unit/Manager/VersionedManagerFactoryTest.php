@@ -1,0 +1,104 @@
+<?php
+
+namespace Wolverine\LaravelRedisSentinel\Tests\Unit\Manager;
+
+use Illuminate\Contracts\Container\Container;
+use Illuminate\Redis\Connections\Connection;
+use Mockery;
+use Wolverine\LaravelRedisSentinel\Configuration\Loader as ConfigurationLoader;
+use Wolverine\LaravelRedisSentinel\Manager\VersionedManagerFactory;
+use Wolverine\LaravelRedisSentinel\Contracts\Factory as ManagerContract;
+use Wolverine\LaravelRedisSentinel\Tests\Support\ApplicationFactory;
+use PHPUnit_Framework_TestCase as TestCase;
+
+class VersionedManagerFactoryTest extends TestCase
+{
+    /**
+     * The instance of the connection factory service under test.
+     *
+     * @var VersionedManagerFactory
+     */
+    protected $subject;
+
+    /**
+     * A mock instance of the package's configuration loader to inject as a
+     * dependency.
+     *
+     * @var ConfigurationLoader
+     */
+    protected $configLoaderMock;
+
+    /**
+     * Run this setup before each test
+     *
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->configLoaderMock = Mockery::mock(ConfigurationLoader::class);
+        $this->configLoaderMock->isLumen = ApplicationFactory::isLumen();
+        $this->configLoaderMock->shouldReceive('getApplicationVersion')
+            ->andReturn(ApplicationFactory::getApplicationVersion());
+        $this->configLoaderMock->shouldReceive('get')
+            ->andReturn([ ])->byDefault();
+
+        $this->subject = new VersionedManagerFactory(
+            Mockery::mock(Container::class),
+            $this->configLoaderMock
+        );
+    }
+
+    /**
+     * Run this cleanup after each test.
+     *
+     * @return void
+     */
+    public function tearDown()
+    {
+        parent::tearDown();
+
+        Mockery::close();
+    }
+
+    public function testIsInitializable()
+    {
+        $this->assertInstanceOf(VersionedManagerFactory::class, $this->subject);
+    }
+
+    public function testBuildsAConnectionFactoryInstance()
+    {
+        // Test $manager->connection() to verify that we loaded the config.
+        $this->configLoaderMock->shouldReceive('get')
+            ->with('database.redis-sentinel', [ ])
+            ->andReturn([ 'connection' => [ ] ]);
+
+        $manager = $this->subject->makeInstance();
+        $connection = $manager->connection('connection');
+
+        $this->assertInstanceOf(ManagerContract::class, $manager);
+        $this->assertInstanceOf(Connection::class, $connection);
+    }
+
+    public function testBuildsAConnectionFactoryWithFactoryMethod()
+    {
+        // Test $manager->connection() to verify that we loaded the config.
+        $this->configLoaderMock->shouldReceive('get')
+            ->with('database.redis-sentinel', [ ])
+            ->andReturn([ 'connection' => [ ] ]);
+
+        $app = Mockery::mock(Container::class);
+        $manager = VersionedManagerFactory::make($app, $this->configLoaderMock);
+        $connection = $manager->connection('connection');
+
+        $this->assertInstanceOf(ManagerContract::class, $manager);
+        $this->assertInstanceOf(Connection::class, $connection);
+    }
+
+    public function testBuildsWithManagerForFrameworkVersion()
+    {
+        $manager = $this->subject->makeInstance();
+        $version = ApplicationFactory::getVersionedRedisSentinelManagerClass();
+
+        $this->assertInstanceOf($version, $manager->getVersionedManager());
+    }
+}

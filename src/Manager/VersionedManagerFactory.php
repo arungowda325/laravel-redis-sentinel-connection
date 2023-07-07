@@ -1,21 +1,21 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Manager;
+namespace Wolverine\LaravelRedisSentinel\Manager;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\Arr;
-use Monospice\LaravelRedisSentinel\Configuration\Loader as ConfigurationLoader;
-use Monospice\LaravelRedisSentinel\RedisSentinelManager;
+use Wolverine\LaravelRedisSentinel\Configuration\Loader as ConfigurationLoader;
+use Wolverine\LaravelRedisSentinel\RedisSentinelManager;
 
 /**
  * Creates instances of the core Redis Sentinel connection manager for the
  * current version of the framework.
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     https://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     https://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class VersionedManagerFactory
 {
@@ -56,7 +56,7 @@ class VersionedManagerFactory
      * @param ConfigurationLoader $config Detects the application version and
      * provides configuration values.
      *
-     * @return \Monospice\LaravelRedisSentinel\Contracts\Factory A configured
+     * @return \Wolverine\LaravelRedisSentinel\Contracts\Factory A configured
      * Redis Sentinel connection manager.
      */
     public static function make(Container $app, ConfigurationLoader $config)
@@ -67,7 +67,7 @@ class VersionedManagerFactory
     /**
      * Create an instance of the package's core Redis Sentinel service.
      *
-     * @return \Monospice\LaravelRedisSentinel\Contracts\Factory A configured
+     * @return \Wolverine\LaravelRedisSentinel\Contracts\Factory A configured
      * Redis Sentinel connection manager.
      */
     public function makeInstance()

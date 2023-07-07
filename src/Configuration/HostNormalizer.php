@@ -1,6 +1,6 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Configuration;
+namespace Wolverine\LaravelRedisSentinel\Configuration;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
@@ -43,10 +43,10 @@ use Illuminate\Support\Str;
  *     ]
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     https://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     https://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class HostNormalizer
 {

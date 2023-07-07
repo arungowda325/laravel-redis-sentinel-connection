@@ -1,22 +1,22 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Manager;
+namespace Wolverine\LaravelRedisSentinel\Manager;
 
 use Illuminate\Redis\RedisManager;
 use Illuminate\Support\Arr;
 use InvalidArgumentException;
-use Monospice\LaravelRedisSentinel\Connectors;
-use Monospice\LaravelRedisSentinel\Contracts\Factory;
+use Wolverine\LaravelRedisSentinel\Connectors;
+use Wolverine\LaravelRedisSentinel\Contracts\Factory;
 
 /**
  * Contains common functionality for the RedisSentinelManager implementations
  * for differing Laravel versions.
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     http://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     http://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 abstract class VersionedRedisSentinelManager
     extends RedisManager
@@ -74,7 +74,7 @@ abstract class VersionedRedisSentinelManager
 
         throw new InvalidArgumentException(
             'Unsupported Redis Sentinel client driver [' . $this->driver . ']. '
-            . 'The monospice/laravel-redis-sentinel-drivers package currently '
+            . 'The arungowda325/laravel-redis-sentinel-connection package currently '
             . 'supports only the "predis" client. Support for the "phpredis" '
             . 'client will be added in the future.'
         );

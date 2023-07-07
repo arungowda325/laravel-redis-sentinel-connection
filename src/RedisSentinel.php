@@ -1,6 +1,6 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel;
+namespace Wolverine\LaravelRedisSentinel;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Facade;
  * A Laravel facade that provides access to the RedisSentinelManager instance
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     http://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     http://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class RedisSentinel extends Facade
 {

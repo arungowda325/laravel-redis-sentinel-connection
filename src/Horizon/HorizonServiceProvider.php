@@ -1,15 +1,15 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Horizon;
+namespace Wolverine\LaravelRedisSentinel\Horizon;
 
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Redis\Factory as RedisFactory;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Horizon\Connectors\RedisConnector as HorizonRedisConnector;
-use Monospice\LaravelRedisSentinel\Configuration\Loader as ConfigurationLoader;
-use Monospice\LaravelRedisSentinel\Horizon\HorizonServiceBindings;
-use Monospice\LaravelRedisSentinel\Manager\VersionedManagerFactory;
-use Monospice\LaravelRedisSentinel\RedisSentinelServiceProvider;
+use Wolverine\LaravelRedisSentinel\Configuration\Loader as ConfigurationLoader;
+use Wolverine\LaravelRedisSentinel\Horizon\HorizonServiceBindings;
+use Wolverine\LaravelRedisSentinel\Manager\VersionedManagerFactory;
+use Wolverine\LaravelRedisSentinel\RedisSentinelServiceProvider;
 
 /**
  * Configures the application to use Redis Sentinel connections for Laravel
@@ -20,10 +20,10 @@ use Monospice\LaravelRedisSentinel\RedisSentinelServiceProvider;
  * service provider.
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     https://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     https://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class HorizonServiceProvider extends ServiceProvider
 {

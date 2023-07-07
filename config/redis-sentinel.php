@@ -29,7 +29,7 @@
 |
 | For more configuration information, please see the package's README:
 |
-|  https://github.com/monospice/laravel-redis-sentinel-drivers
+|  https://github.com/arungowda325/laravel-redis-sentinel-connection
 |
 */
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Horizon;
+namespace Wolverine\LaravelRedisSentinel\Horizon;
 
 use ArrayIterator;
 use IteratorAggregate;
@@ -12,10 +12,10 @@ use Laravel\Horizon\ServiceBindings;
  * connection manager if needed.
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     https://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     https://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class HorizonServiceBindings implements IteratorAggregate
 {

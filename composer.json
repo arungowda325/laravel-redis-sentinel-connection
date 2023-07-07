@@ -1,47 +1,47 @@
 {
     "name": "arungowda325/laravel-redis-sentinel-connection",
-    "description": "Redis Sentinel integration for Laravel and Lumen.",
+    "description": "Redis Sentinel connection for Laravel and Lumen.",
     "keywords": ["redis", "sentinel", "laravel", "lumen"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Phaneesh",
-            "email": "phaneesh@ffreedom.com"
+            "email": "phaneesh.hegde@gmail.com"
         }
     ],
     "require": {
         "php": ">=5.6.4",
-        "illuminate/cache": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "illuminate/contracts": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "illuminate/queue": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "illuminate/redis": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "illuminate/session": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "illuminate/support": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "monospice/spicy-identifiers": "^0.1",
-        "predis/predis": "^1.1 || ^2.1"
+        "illuminate/cache": ">=5.4",
+        "illuminate/contracts": ">=5.4",
+        "illuminate/queue": ">=5.4",
+        "illuminate/redis": ">=5.4",
+        "illuminate/session": ">=5.4",
+        "illuminate/support": ">=5.4",
+        "monospice/spicy-identifiers": ">=0.1",
+        "predis/predis": ">=1.1"
     },
     "require-dev": {
-        "laravel/framework": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "laravel/horizon": "^1.0 || ^2.0 || ^3.0 || ^4.0 || ^9.0 || ^10.0",
-        "laravel/lumen-framework": "^5.4 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
-        "mockery/mockery": "^1.3 || ^1.4",
-        "phpunit/phpunit": "^5.0 || ^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0"
+        "laravel/framework": ">=5.4",
+        "laravel/horizon": ">=1.0",
+        "laravel/lumen-framework": ">=5.4",
+        "mockery/mockery": ">=1.3",
+        "phpunit/phpunit": ">=5.0"
     },
     "autoload": {
         "psr-4": {
-            "Monospice\\LaravelRedisSentinel\\": "src/"
+            "Wolverine\\LaravelRedisSentinel\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Monospice\\LaravelRedisSentinel\\Tests\\": "tests/"
+            "Wolverine\\LaravelRedisSentinel\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Monospice\\LaravelRedisSentinel\\RedisSentinelServiceProvider"
+                "Wolverine\\LaravelRedisSentinel\\RedisSentinelServiceProvider"
             ]
         }
     }

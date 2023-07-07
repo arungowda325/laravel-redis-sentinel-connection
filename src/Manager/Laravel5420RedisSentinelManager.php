@@ -1,8 +1,8 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Manager;
+namespace Wolverine\LaravelRedisSentinel\Manager;
 
-use Monospice\LaravelRedisSentinel\Manager\VersionedRedisSentinelManager;
+use Wolverine\LaravelRedisSentinel\Manager\VersionedRedisSentinelManager;
 
 /**
  * Enables Laravel's Redis database driver to accept configuration options for
@@ -13,10 +13,10 @@ use Monospice\LaravelRedisSentinel\Manager\VersionedRedisSentinelManager;
  * class. The visibility of 'RedisManager::resolve()' changed to 'public'.
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     http://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     http://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class Laravel5420RedisSentinelManager extends VersionedRedisSentinelManager
 {

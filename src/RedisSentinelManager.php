@@ -1,9 +1,9 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel;
+namespace Wolverine\LaravelRedisSentinel;
 
-use Monospice\LaravelRedisSentinel\Contracts\Factory;
-use Monospice\LaravelRedisSentinel\Manager\VersionedRedisSentinelManager;
+use Wolverine\LaravelRedisSentinel\Contracts\Factory;
+use Wolverine\LaravelRedisSentinel\Manager\VersionedRedisSentinelManager;
 use Monospice\SpicyIdentifiers\DynamicMethod;
 
 /**
@@ -29,10 +29,10 @@ use Monospice\SpicyIdentifiers\DynamicMethod;
  * diverging Laravel version.
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     http://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     http://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class RedisSentinelManager implements Factory
 {

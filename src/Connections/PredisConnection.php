@@ -1,6 +1,6 @@
 <?php
 
-namespace Monospice\LaravelRedisSentinel\Connections;
+namespace Wolverine\LaravelRedisSentinel\Connections;
 
 use Closure;
 use Illuminate\Redis\Connections\PredisConnection as LaravelPredisConnection;
@@ -18,10 +18,10 @@ use RuntimeException;
  * connections (in this case, Sentinel connections).
  *
  * @category Package
- * @package  Monospice\LaravelRedisSentinel
+ * @package  Wolverine\LaravelRedisSentinel
  * @author   @pdbreen, Cy Rossignol <cy@rossignols.me>
  * @license  See LICENSE file
- * @link     https://github.com/monospice/laravel-redis-sentinel-drivers
+ * @link     https://github.com/arungowda325/laravel-redis-sentinel-connection
  */
 class PredisConnection extends LaravelPredisConnection
 {
